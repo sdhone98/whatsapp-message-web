@@ -1,22 +1,48 @@
 .main-home {
-    width: 100%;
-    height: 80vh;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .content {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    background-color: #f0f0ec;
+    padding: 2rem;
+    border: 1px solid rgba($color: #000000, $alpha: 0.2);
+    border-radius: 25px;
 
-    .content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: #f0f0ec;
-        padding: 2rem;
-        border: 1px solid rgba($color: #000000, $alpha: .2);
-        border-radius: 25px;
-
-        .text {
-            color: #075e54;
-            font-size: 2rem;
-        }
+    .text {
+      color: #075e54;
+      font-size: 2rem;
     }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .phone-number {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .phone-number {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .phone-number {
+    width: 60%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .phone-number {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .phone-number {
+    width: 40%;
+  }
 }

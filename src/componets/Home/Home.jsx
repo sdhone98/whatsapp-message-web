@@ -50,9 +50,9 @@ const Home = () => {
         >
           <h2 className="text">Send WhatsApp Message.</h2>
           <MuiPhoneNumber
+            className="phone-number"
             defaultCountry="in"
             onChange={onPhoneNumberChanged}
-            style={{ width: "40%" }}
           />
           <TextField
             fullWidth
