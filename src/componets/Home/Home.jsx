@@ -47,8 +47,6 @@ const Home = () => {
           alignItems="center"
           gap={4}
           m={0}
-          // p={2}
-          // sx={{ background: "lightgrey" }}
         >
           <h2 className="text">Send WhatsApp Message.</h2>
           <MuiPhoneNumber
