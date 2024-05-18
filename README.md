@@ -12,6 +12,10 @@ This is a simple web application built with React and SCSS that allows users to 
 
 You can access the live demo of this project [here](https://wa-msg.netlify.app/).
 
+## Screenshot
+
+![Screenshot](/public/wa-msg.netlify.app_.png)
+
 ## Technologies Used
 
 - React: JavaScript library for building user interfaces
