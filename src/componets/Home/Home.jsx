@@ -1,17 +1,13 @@
 import TextField from "@mui/material/TextField";
-import { red, lightGreen } from "@mui/material/colors";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import MuiPhoneNumber from "mui-phone-number";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import "./Home.scss";
-import Switch from '@mui/material/Switch';
+import React from "react";
 
 const Home = () => {
-  const [isDayMode, setIsDayMode] = useState(false)
-  const [isDayModeFlag, setIsDayModeFlag] = useState("Light")
   const [phoneNumber, setPhoneNumber] = useState(0);
   const [message, setMessage] = useState("");
   const [phoneNumberError, setPhoneNumberError] = useState(false);
@@ -20,30 +16,20 @@ const Home = () => {
       customGreen: {
         main: "#075e54",
       },
-    },  
+    },
   });
 
-  const toggleMode = () => {
-    setIsDayMode(!isDayMode)
-    setIsDayModeFlag(isDayMode? "Light" : "Dark")
-    console.log("===> ",isDayMode)
-  }
-
-  const onPhoneNumberChanged = (phoneNumber, country) => {
-    setPhoneNumber(phoneNumber);
-  };
-  const label = { inputProps: { 'aria-label': 'Switch demo' } };
-
   const sendMessage = () => {
-    const url = `https://wa.me/${phoneNumber}?text=${
-      message ? message : "Hello..."
-    }`;
+    if (!phoneNumberError) {
+      const url = `https://wa.me/${phoneNumber}?text=${
+        message ? message : "Hello..."
+      }`;
 
-    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+      const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+    }
   };
 
   const checkPhoneNumber = (e) => {
-    console.log(e.target.value);
     if (e.target.value.length == 10) {
       setPhoneNumberError(false);
       setPhoneNumber(e.target.value);
@@ -54,11 +40,6 @@ const Home = () => {
 
   return (
     <div className="main-home">
-      {/* <div className="mode-switch">
-
-      <Switch className="switch-btn" {...label} defaultChecked onClick={toggleMode}/>
-      <span>{isDayModeFlag}</span>
-      </div> */}
       <ThemeProvider theme={theme}>
         <Box
           className="content"
